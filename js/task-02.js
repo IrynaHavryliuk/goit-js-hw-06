@@ -43,13 +43,23 @@ const ingredients = [
 // console.log(elements);
 
 // foodIngredientsEl.append(...elements);
-const ulList = document.querySelector('ul')
+// const ulList = document.querySelector('ul')
 
-for (let ingredient of ingredients) {
-  const items = document.createElement('li');
-  items.textContent = ingredient;
-  items.classList.add('item');
-  ulList.append(items);
-  // document.append(liEl);
-  console.log(items);
-}
+// for (let ingredient of ingredients) {
+//   const items = document.createElement('li');
+//   items.textContent = ingredient;
+//   items.classList.add('item');
+//   ulList.append(items);
+//   // document.append(liEl);
+//   console.log(items);
+// }
+
+const ulList = document.querySelector('ul');
+const items = ingredients.map(ingredient => {
+  const item = document.createElement('li');
+  item.textContent = ingredient;
+  item.classList.add('item');
+  return item;
+});
+
+ulList.append(...items);
